@@ -278,7 +278,7 @@ def main():
 		n = len(pickle_paths)
 		print("No precalculated edge graph has been specified.")
 		print('Calculate {} pairwise distances.'.format(((n-1)*(n))/2))
-		edge_graph_path = calcPairwiseDist(pickle_paths, similarity_dir, distance_function_string = distance_function_string, from_dir = False, experiment_name = experiment_name+'_WMD'+sig_size, processes = processes,
+		edge_graph_path = calcPairwiseDist(pickle_paths, similarity_dir, distance_function_string = distance_function_string, from_dir = False, experiment_name = experiment_name+'_WMD'+str(sig_size), processes = processes,
 										output_format = output_format, make_pickle = make_pickle)
 		print('Save edge graph at {}.'.format(edge_graph_path))
 
