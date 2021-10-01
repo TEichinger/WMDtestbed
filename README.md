@@ -1,8 +1,8 @@
 WMDtestbed is a Python3 testbed for experimenting with the Word Mover's Distance (WMD) by [Kusner et al. (2015)](https://github.com/mkusner/wmd).
 
 You can ...
-1. ... calculate pairwise distances between a set of text documents,
-1. ... run keyword extraction to speed up similarity calculation,
+1. ... calculate pairwise WMD distances and WMD similarities between a set of text documents,
+1. ... run keyword extraction to speed up distance and similarity calculation,
 1. ... perform and evaluate k-nearest-neighbor classification on the basis of WMD.
 
 The WMDtestbed has been successfully tested on
