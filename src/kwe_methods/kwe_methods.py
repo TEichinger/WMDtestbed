@@ -53,7 +53,8 @@ class YakeKeywordextractor(BaseKeywordextractor):
 
         # invert the weights --> (high = important)
         max_weight = max(word_weights)
-        word_weights_inverted = [max_weight - weight_importance for weight_importance in word_weights]
+        min_weight = min(word_weights)
+        word_weights_inverted = [max_weight + min_weight - weight_importance for weight_importance in word_weights]
 
         # normalizes the weights such that they sum to 1
         sum_of_word_weights = sum(word_weights_inverted)
@@ -61,7 +62,7 @@ class YakeKeywordextractor(BaseKeywordextractor):
 
         # if n_grams of size greater than 1 were allowed for the extraction process, the top 20 individual keyWORDS have to be used for the further pipeline process
         if self.n_gram_size > 1:
-            top_k_keywords, word_weights = convert_3_grams_into_single_keywords(self.sig_size, top_k_keywords, normalized_word_weights)
+            top_k_keywords, word_weights = convert_3_grams_into_single_keywords(self.sig_size, top_k_keywords, normalized_word_weights) # TODO: needs adjustment for the inversion of weights
 
         return top_k_keywords, normalized_word_weights
 # --- END YAKE KWE ---
